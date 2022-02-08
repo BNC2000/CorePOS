@@ -1,1 +1,16 @@
-
+$ cd /path/to/webroot/IS4C
+$ cp composer.json.dist composer.json
+# You may need to install composer. On Ubuntu:
+#  $ apt-get install composer
+$ composer install
+# This may not work because of missing PHP extensions:
+#  "the requested PHP extension gd is missing from your system."
+# To get them under Ubuntu:
+# $ apt-cache search gd php
+# If that reports it available:
+# php5.6-gd - GD module for PHP
+# then
+# $ apt-get install php5.6-gd
+# Try again
+# $ composer update
+# If it succeeds composer.lock is created.
